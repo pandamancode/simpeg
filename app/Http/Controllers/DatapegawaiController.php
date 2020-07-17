@@ -47,6 +47,7 @@ class DatapegawaiController extends Controller
 
     public function update(Request $request){
         if($request->has('foto')){
+            //upload foto
             $gambar = $request->foto;
             $new_gambar = $request->nik.'.'.$gambar->getClientOriginalExtension();
 
