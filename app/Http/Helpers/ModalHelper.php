@@ -60,3 +60,25 @@ if ( ! function_exists('bulan'))
         }
     }
 }
+
+if ( ! function_exists('format_rp'))
+{
+    function format_rp($angka)
+    {
+        $rupiah=number_format($angka,0,',','.');
+        return $rupiah;
+    }
+}
+
+if ( ! function_exists('tgl_indo'))
+{
+    function tgl_indo($tgl)
+    {
+        $ubah = gmdate($tgl, time()+60*60*8);
+        $pecah = explode("-",$ubah);  //memecah variabel berdasarkan -
+        $tanggal = $pecah[2];
+        $bulan = bulan($pecah[1]);
+        $tahun = $pecah[0];
+        return $tanggal.' '.$bulan.' '.$tahun; //hasil akhir
+    }
+}

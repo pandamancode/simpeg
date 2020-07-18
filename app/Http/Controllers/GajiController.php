@@ -72,4 +72,39 @@ class GajiController extends Controller
         }
         //return redirect('/gaji')->with('status', 'Berhasil Menginput Data Gaji');
     }
+
+    public function update(Request $request){
+        $gaji = \DB::table('tb_penggajian')
+        ->join('tb_pegawai', 'tb_penggajian.nik', '=', 'tb_pegawai.nik')
+        ->where('tb_penggajian.id_penggajian', '=', $request->id)
+        ->select('tb_pegawai.*', 'tb_penggajian.*')
+        ->get(); 
+
+        echo show_my_modal('admin/gaji/modal_update','md-update',['id'=>$request->id, 'gajis'=>$gaji]);
+    }
+
+    public function update_proses(Request $request){
+        $gaji =  Gaji::find($request->id_penggajian);
+        $gaji->gapok = $request->gapok;
+        $gaji->tunjangan = $request->tunjangan;
+        $gaji->potongan = $request->potongan;
+        $gaji->total_gaji = $request->total_gaji;
+        $gaji->save();
+        echo "success";
+    }
+
+    public function delete(Request $request){
+        Gaji::where('id_penggajian',$request->id_penggajian)->delete();
+        return redirect('/gaji')->with('status', 'Berhasil Menghapus Data Gaji');
+    }
+
+    public function slip($id){
+        $gaji = \DB::table('tb_penggajian')
+        ->join('tb_pegawai', 'tb_penggajian.nik', '=', 'tb_pegawai.nik')
+        ->where('tb_penggajian.id_penggajian', '=', $id)
+        ->select('tb_pegawai.*', 'tb_penggajian.*')
+        ->get(); 
+
+        return view('admin/gaji/slip_gaji',['gajis'=>$gaji]);
+    }
 }

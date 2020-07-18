@@ -59,6 +59,10 @@ Route::post('/gaji/filter', 'GajiController@filter');
 Route::post('/gaji/add', 'GajiController@add');
 Route::post('/gaji/data_gaji', 'GajiController@data_gaji');
 Route::post('/gaji/entry', 'GajiController@store');
+Route::post('/gaji/update', 'GajiController@update');
+Route::post('/gaji/update_proses', 'GajiController@update_proses');
+Route::post('/gaji/hapus', 'GajiController@delete');
+Route::get('/gaji/slip/{id_honor}', 'GajiController@slip');
 Auth::routes();
 
 //route Users
