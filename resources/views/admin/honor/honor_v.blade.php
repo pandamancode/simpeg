@@ -30,8 +30,8 @@
 						<a href="javascript:;" class="btn btn-danger btn-xs hapus-data btn-flat xtooltip" data-toggle="modal" data-target="#konfirmasiHapus" data-id="{{ $p->id_honor }}"><i class="fa fa-trash fa-fw" style="color:#ffffff;" title="Hapus"></i>  <span style="color:#ffffff;"></span></a>
 					</td>
 					<td>{{ $p->bidang_kerja }}</td>
-					<td>{{ $p->gapok }}</td>
-					<td>{{ $p->tunjangan }}</td>
+					<td>Rp. {{ format_rp($p->gapok) }},- </td>
+					<td>Rp. {{ format_rp($p->tunjangan) }},- </td>
 				</tr>
 				@endforeach
 			</tbody>

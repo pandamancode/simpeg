@@ -73,3 +73,5 @@ Route::get('/users/edit/{id}', 'UserController@edit');
 Route::post('/users/update', 'UserController@update');
 Route::post('/users/hapus', 'UserController@delete');
 
+//route Laporan
+Route::get('/laporan', 'LaporanController@index');
