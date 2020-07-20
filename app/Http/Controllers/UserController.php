@@ -67,4 +67,5 @@ class UserController extends Controller
         User::where('id',$request->id)->delete();
         return redirect('/users')->with('status', 'Berhasil Menghapus Data Pengguna');
     }
+
 }

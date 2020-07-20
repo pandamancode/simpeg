@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 //home
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/ubahpw', 'HomeController@ubahpw');
+Route::post('/home/changepw', 'HomeController@changepw');
 //Route::get('/home', 'HomeController@index');
 
 //route pegawai
@@ -75,3 +77,5 @@ Route::post('/users/hapus', 'UserController@delete');
 
 //route Laporan
 Route::get('/laporan', 'LaporanController@index');
+Route::post('/laporan/perbidang', 'LaporanController@perbidang');
+Route::post('/laporan/penempatan', 'LaporanController@perpenempatan');

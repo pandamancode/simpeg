@@ -32,6 +32,14 @@
           </span>
         </a>
       </li>
+
+      <li class="treeview" id="laporan">
+        <a href="{{url('/laporan')}}">
+          <i class="fa fa-list-alt"></i> <span>Laporan</span>
+          <span class="pull-right-container">
+          </span>
+        </a>
+      </li>
       <?php } ?>
 
       <?php if(Auth::user()->level=='BENDAHARA'){ ?>

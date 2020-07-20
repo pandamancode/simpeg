@@ -19,7 +19,7 @@
             <p> {{ Auth::user()->name }} <small> {{ Auth::user()->level }} </small> </p>
           </li>
           <li class="user-footer">
-            <div class="pull-left"> <a href="{{ url('/') }}" class="btn btn-default btn-flat"><i class="fa fa-lock"></i>  Ubah Password</a> </div>
+            <div class="pull-left"> <a href="{{ url('/ubahpw') }}" class="btn btn-default btn-flat"><i class="fa fa-lock"></i>  Ubah Password</a> </div>
 
             <div class="pull-right"> <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Keluar</a> </div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

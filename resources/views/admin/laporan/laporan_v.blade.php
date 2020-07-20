@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="box-body">
-        <form id="form-filter" method="post" action="{{ url('laporan/perbidang') }}">
+        <form id="form-filter" method="post" action="{{ url('laporan/perbidang') }}" target="_blank">
         @csrf
           <div class="col-md-4">
             <div class="form-group">
@@ -19,11 +19,11 @@
                 <option value="" disabled selected>Pilih Bidang Kerja</option>
                 <option value="Direktur">Direktur</option>
                 <option value="Bendahara">Bendahara</option>
-                <option value="Bendahara">HRD</option>
-                <option value="Bendahara">Satpam</option>
-                <option value="Bendahara">Driver</option>
-                <option value="Bendahara">Cleaning Service</option>
-                <option value="Bendahara">Parkir</option>
+                <option value="HRD">HRD</option>
+                <option value="Satpam">Satpam</option>
+                <option value="Driver">Driver</option>
+                <option value="Cleaning Service">Cleaning Service</option>
+                <option value="Parkir">Parkir</option>
               </select>
             </div>
           </div>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="box-body">
-        <form id="form-filter" method="post" action="{{ url('laporan/penempatan') }}">
+        <form id="form-filter" method="post" action="{{ url('laporan/penempatan') }}" target="_blank">
         @csrf
           <div class="col-md-4">
             <div class="form-group">
