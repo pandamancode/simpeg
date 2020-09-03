@@ -18,12 +18,14 @@
 					<th>NIK</th>
 					<th>Nama Pegawai</th>
 					<th>Jenis Kelamin</th>
+					<th>TTL</th>
+					<th>Alamat</th>
 					<th>No. Telp</th>
+					<th>Bidang Kerja</th>
 					<th>Foto</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php $no =1; ?>
 				@foreach($pegawai as $p)
 
 				<tr>
@@ -35,7 +37,10 @@
 					<td>{{ $p->nik }}</td>
 					<td>{{ $p->nama_pegawai }}</td>
 					<td>{{ $p->jk=="L" ? "Laki-Laki" : "Perempuan" }}</td>
+					<td>{{ $p->tempat_lahir }}, <?=date('d-m-Y',strtotime($p->tanggal_lahir))?></td>
+					<td>{{ $p->alamat }}</td>
 					<td>{{ $p->no_telp }}</td>
+					<td>{{ $p->bidang_kerja }}</td>
 					<td><img width="40px;" src="{{ $p->foto }}"/></td>
 				</tr>
 				@endforeach

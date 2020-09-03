@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="{{url('assets/dist/img/logo.png')}}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="author" content="thonie, Web Developer">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   
     @include('_layouts/css')
 
