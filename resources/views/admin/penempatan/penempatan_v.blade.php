@@ -17,6 +17,7 @@
 					<th width="15%">Option</th>
 					<th>NIK</th>
 					<th>Nama Pegawai</th>
+          <th>Bidang Kerja</th>
 					<th>Perusahaan Mitra</th>
 					<th>Status</th>
 				</tr>
@@ -33,7 +34,8 @@
 					</td>
 					<td>{{ $p->nik }}</td>
 					<td>{{ $p->nama_pegawai }}</td>
-					<td>{{ $p->nama_mitra }}</td>
+					<td>{{ $p->bidang_kerja }}</td>
+          <td>{{ $p->nama_mitra }}</td>
 					<td>{{ $p->status }}</td>
 				</tr>
 				@endforeach

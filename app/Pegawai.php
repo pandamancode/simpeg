@@ -8,4 +8,5 @@ class Pegawai extends Model
 {
     protected $table = 'tb_pegawai';
     protected $primaryKey = 'nik';
+    protected $keyType = 'string';
 }

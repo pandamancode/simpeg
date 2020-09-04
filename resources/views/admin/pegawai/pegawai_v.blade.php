@@ -37,7 +37,15 @@
 					<td>{{ $p->nik }}</td>
 					<td>{{ $p->nama_pegawai }}</td>
 					<td>{{ $p->jk=="L" ? "Laki-Laki" : "Perempuan" }}</td>
-					<td>{{ $p->tempat_lahir }}, <?=date('d-m-Y',strtotime($p->tanggal_lahir))?></td>
+					<td>
+						<?php 
+						if($p->tanggal_lahir==NULL || $p->tanggal_lahir=='0000-00-00'){ 
+							echo $p->tempat_lahir.", -";
+						}else{
+						?>
+						{{ $p->tempat_lahir }}, <?=date('d-m-Y',strtotime($p->tanggal_lahir))?>
+						<?php } ?>
+					</td>
 					<td>{{ $p->alamat }}</td>
 					<td>{{ $p->no_telp }}</td>
 					<td>{{ $p->bidang_kerja }}</td>
